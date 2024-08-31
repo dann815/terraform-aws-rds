@@ -1,13 +1,24 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
+terraform { 
+  cloud { 
+    
+    organization = "ACMECorp-fall24" 
+
+    workspaces { 
+      name = "Cloud-fall2024" 
+    } 
+  } 
+}
+
 provider "aws" {
   region = "us-east-2"
 }
 
-provider "random" {}
-
 data "aws_availability_zones" "available" {}
+
+provider "random" {}
 
 resource "random_pet" "random" {}
 
