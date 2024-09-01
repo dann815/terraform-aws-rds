@@ -13,7 +13,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-2"
+  region = "us-west-1"
 }
 
 data "aws_availability_zones" "available" {}
@@ -89,4 +89,5 @@ resource "aws_db_instance" "education" {
   parameter_group_name   = aws_db_parameter_group.education.name
   publicly_accessible    = true
   skip_final_snapshot    = true
+  storage_encrypted      = var.db_encrypted
 }

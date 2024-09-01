@@ -13,3 +13,8 @@ variable "db_password" {
   description = "RDS root user password"
   sensitive   = true
 }
+
+variable "db_encrypted" {
+  description = "Whether to encrypt the RDS instance"
+  type = bool
+}
