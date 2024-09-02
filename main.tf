@@ -13,7 +13,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-1"
+  region = "us-east-2"
 }
 
 data "aws_availability_zones" "available" {}
@@ -77,7 +77,7 @@ resource "aws_db_parameter_group" "education" {
 }
 
 resource "aws_db_instance" "education" {
-  identifier             = "${var.db_name}-${random_pet.random.id}"
+  identifier             = lower("${var.db_name}-${random_pet.random.id}")
   instance_class         = "db.t3.micro"
   allocated_storage      = 5
   engine                 = "postgres"

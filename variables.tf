@@ -17,4 +17,5 @@ variable "db_password" {
 variable "db_encrypted" {
   description = "Whether to encrypt the RDS instance"
   type = bool
+  default = true
 }
